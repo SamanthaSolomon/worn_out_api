@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: worn_out_api_production
-  username: worn_out_api
-  password: <%= ENV['WORN_OUT_API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
