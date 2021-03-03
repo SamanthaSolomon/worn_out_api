@@ -1412,3 +1412,20 @@ Processing by ItemsController#create as */*
 Completed 201 Created in 220ms (Views: 0.6ms | ActiveRecord: 56.5ms | Allocations: 9125)
 
 
+Started PUT "/users/2/items/14" for ::1 at 2021-03-03 14:40:41 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#update as */*
+  Parameters: {"img"=>"https://media.everlane.com/image/upload/c_fill,dpr_2.0,f_auto,g_face:center,q_auto,w_auto:100:1200/v1/i/7253c491_97de.jpg", "category"=>"Coat", "use"=>"Outdoor", "color"=>"Brown", "style"=>"Overcoat", "user_id"=>"2", "id"=>"14", "item"=>{"img"=>"https://media.everlane.com/image/upload/c_fill,dpr_2.0,f_auto,g_face:center,q_auto,w_auto:100:1200/v1/i/7253c491_97de.jpg", "category"=>"Coat", "style"=>"Overcoat", "use"=>"Outdoor", "color"=>"Brown"}}
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:45:in `set_item'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mItem Update (1.4ms)[0m  [1m[33mUPDATE "items" SET "style" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["style", "Overcoat"], ["updated_at", "2021-03-03 19:40:42.164700"], ["id", 14]]
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:30:in `update'
+Completed 200 OK in 119ms (Views: 12.9ms | ActiveRecord: 27.4ms | Allocations: 16269)
+
+
