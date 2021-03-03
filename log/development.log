@@ -478,3 +478,286 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 37ms (Views: 28.8ms | ActiveRecord: 2.3ms | Allocations: 7005)
 
 
+Started GET "/users/1/items/" for ::1 at 2021-03-03 12:11:30 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"user_id"=>"1", "item"=>{"user_id"=>"1"}}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.9ms | Allocations: 2434)
+
+
+Started GET "/items/" for ::1 at 2021-03-03 12:11:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/items"):
+  
+Started GET "/user/1" for ::1 at 2021-03-03 12:11:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+Started GET "/users/1" for ::1 at 2021-03-03 12:11:57 -0500
+Processing by UsersController#show as */*
+  Parameters: {"user_id"=>1, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 1.6ms | Allocations: 785)
+
+
+Started GET "/users/1/items/10" for ::1 at 2021-03-03 12:35:44 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"user_id"=>"1", "id"=>"10", "item"=>{"user_id"=>"1"}}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:44:in `set_item'
+Completed 200 OK in 79ms (Views: 2.2ms | ActiveRecord: 31.2ms | Allocations: 2919)
+
+
+Started GET "/users/1/items" for ::1 at 2021-03-03 12:51:40 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"user_id"=>"1", "item"=>{"user_id"=>"1"}}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/items_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 32.1ms | Allocations: 6151)
+
+
+Started GET "/users/2/items" for ::1 at 2021-03-03 12:51:56 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"user_id"=>"2", "item"=>{"user_id"=>"2"}}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/items_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 1129)
+
+
+Started GET "/users/2" for ::1 at 2021-03-03 12:53:11 -0500
+Processing by UsersController#show as */*
+  Parameters: {"user_id"=>1, "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 23ms (Views: 1.2ms | ActiveRecord: 3.0ms | Allocations: 2356)
+
+
+Started GET "/users/1" for ::1 at 2021-03-03 12:53:14 -0500
+Processing by UsersController#show as */*
+  Parameters: {"user_id"=>1, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 624)
+
+
+Started GET "/users/1/items" for ::1 at 2021-03-03 12:53:45 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"user_id"=>"1", "item"=>{"user_id"=>"1"}}
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/items_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 1.5ms | Allocations: 2084)
+
+
+Started POST "/users/1/items" for ::1 at 2021-03-03 13:00:09 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+[31mUnpermitted parameter: :item_type[0m
+Completed 500 Internal Server Error in 11ms (Allocations: 2239)
+
+
+  
+NameError (undefined local variable or method `item' for #<ItemsController:0x000000000097e0>
+Did you mean?  @item):
+  
+app/controllers/items_controller.rb:19:in `create'
+Started POST "/users/1/@item" for ::1 at 2021-03-03 13:01:43 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/@item"):
+  
+Started POST "/users/1/item" for ::1 at 2021-03-03 13:01:53 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/item"):
+  
+Started POST "/users/1/items" for ::1 at 2021-03-03 13:02:01 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+[31mUnpermitted parameter: :item_type[0m
+Completed 500 Internal Server Error in 8ms (Allocations: 2126)
+
+
+  
+NameError (undefined local variable or method `item' for #<ItemsController:0x00000000009920>
+Did you mean?  @item):
+  
+app/controllers/items_controller.rb:19:in `create'
+Started POST "/users/1/items" for ::1 at 2021-03-03 13:02:34 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+[31mUnpermitted parameter: :item_type[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 19.3ms | Allocations: 4066)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/items_controller.rb:19:in `create'
+Started POST "/users/1/items" for ::1 at 2021-03-03 13:03:01 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+[31mUnpermitted parameter: :item_type[0m
+Completed 422 Unprocessable Entity in 90ms (Views: 1.9ms | ActiveRecord: 50.2ms | Allocations: 5328)
+
+
+Started POST "/users/1/items" for ::1 at 2021-03-03 13:04:07 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+[31mUnpermitted parameter: :item_type[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 13.6ms | Allocations: 4145)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/items_controller.rb:19:in `create'
+Started POST "/users/1/items" for ::1 at 2021-03-03 13:06:11 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+[31mUnpermitted parameter: :item_type[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:21:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:21:in `create'
+  [1m[36mItem Create (2.1ms)[0m  [1m[32mINSERT INTO "items" ("img", "category", "use", "color", "wear_count", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["img", "https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403"], ["category", "Onepeice"], ["use", "Everyday"], ["color", "Red"], ["wear_count", 0], ["created_at", "2021-03-03 18:06:11.318147"], ["updated_at", "2021-03-03 18:06:11.318147"], ["user_id", 1]]
+  ↳ app/controllers/items_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:21:in `create'
+Completed 201 Created in 100ms (Views: 2.6ms | ActiveRecord: 36.3ms | Allocations: 10335)
+
+
+Started GET "/users/1/items/14" for ::1 at 2021-03-03 13:06:59 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0, "user_id"=>"1", "id"=>"14", "item"=>{"img"=>"https://cdn.shopify.com/s/files/1/0417/7870/8643/products/8_1.14.21_RED_COVERALL_1_1200x.jpg?v=1610674403", "category"=>"Onepeice", "item_type"=>"Jumpsuit", "use"=>"Everyday", "color"=>"Red", "wear_count"=>0}}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:45:in `set_item'
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.9ms | Allocations: 892)
+
+
+Started PUT "/users/1/items/14" for ::1 at 2021-03-03 13:07:33 -0500
+Processing by ItemsController#update as */*
+  Parameters: {"item_type"=>"Jumpsuit", "user_id"=>"1", "id"=>"14", "item"=>{"item_type"=>"Jumpsuit"}}
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:45:in `set_item'
+[31mUnpermitted parameter: :item_type[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:30:in `update'
+Completed 200 OK in 26ms (Views: 1.3ms | ActiveRecord: 4.7ms | Allocations: 2663)
+
+
+Started PUT "/users/1/items/14" for ::1 at 2021-03-03 13:08:24 -0500
+Processing by ItemsController#update as */*
+  Parameters: {"item_type"=>"Jumpsuit", "user_id"=>"1", "id"=>"14", "item"=>{"item_type"=>"Jumpsuit"}}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:45:in `set_item'
+[31mUnpermitted parameter: :item_type[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:30:in `update'
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 3.2ms | Allocations: 2662)
+
+
+Started POST "/users/2/items/" for ::1 at 2021-03-03 13:11:31 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1, "user_id"=>"2", "item"=>{"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1}}
+[31mUnpermitted parameter: :item_type[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:21:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:21:in `create'
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("img", "category", "use", "color", "wear_count", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["img", "https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg"], ["category", "Onepeice"], ["use", "Specialty"], ["color", "Multi"], ["wear_count", 1], ["created_at", "2021-03-03 18:11:31.584938"], ["updated_at", "2021-03-03 18:11:31.584938"], ["user_id", 2]]
+  ↳ app/controllers/items_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:21:in `create'
+Completed 201 Created in 25ms (Views: 0.7ms | ActiveRecord: 3.7ms | Allocations: 2837)
+
+
+Started POST "/users/2" for ::1 at 2021-03-03 13:13:40 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started GET "/users/2" for ::1 at 2021-03-03 13:13:48 -0500
+Processing by UsersController#show as */*
+  Parameters: {"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1, "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 1.9ms | Allocations: 812)
+
+
+Started GET "/users/2/items" for ::1 at 2021-03-03 13:13:55 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1, "user_id"=>"2", "item"=>{"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1}}
+  [1m[36mItem Load (3.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/items_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 3.5ms | Allocations: 1284)
+
+
+Started GET "/users/2/items/13" for ::1 at 2021-03-03 13:14:16 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1, "user_id"=>"2", "id"=>"13", "item"=>{"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1}}
+  [1m[36mItem Load (2.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:45:in `set_item'
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 2.6ms | Allocations: 692)
+
+
+Started DELETE "/users/2/items/13" for ::1 at 2021-03-03 13:14:25 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1, "user_id"=>"2", "id"=>"13", "item"=>{"img"=>"https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:1040/v1/prod/product_images/gavin-dress/orange_grove/5fe4207ac4a7a700173b61e9/original.jpg", "category"=>"Onepeice", "item_type"=>"Dress", "use"=>"Specialty", "color"=>"Multi", "wear_count"=>1}}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:45:in `set_item'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:39:in `destroy'
+  [1m[36mItem Destroy (2.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/items_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:39:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 4.6ms | Allocations: 1806)
+
+
+Started POST "/users/" for ::1 at 2021-03-03 13:15:12 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Uma", "user"=>{"username"=>"Uma"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Uma"], ["created_at", "2021-03-03 18:15:12.280494"], ["updated_at", "2021-03-03 18:15:12.280494"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 20ms (Views: 4.9ms | ActiveRecord: 2.7ms | Allocations: 2170)
+
+
+Started PATCH "/users/3" for ::1 at 2021-03-03 13:15:43 -0500
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"Uma D.", "id"=>"3", "user"=>{"username"=>"Uma D."}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "Uma D."], ["updated_at", "2021-03-03 18:15:44.003565"], ["id", 3]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+Completed 200 OK in 29ms (Views: 0.7ms | ActiveRecord: 11.9ms | Allocations: 2350)
+
+
+Started DELETE "/users/3" for ::1 at 2021-03-03 13:15:54 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"username"=>"Uma D.", "id"=>"3", "user"=>{"username"=>"Uma D."}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[36mUser Destroy (2.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+Completed 204 No Content in 17ms (ActiveRecord: 4.6ms | Allocations: 1784)
+
+
