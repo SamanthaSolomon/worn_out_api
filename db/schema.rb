@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_223452) do
+ActiveRecord::Schema.define(version: 2021_03_03_155822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_223452) do
   create_table "items", force: :cascade do |t|
     t.string "img"
     t.string "category"
-    t.string "type"
+    t.string "item_type"
     t.string "use"
     t.string "color"
     t.integer "wear_count"
