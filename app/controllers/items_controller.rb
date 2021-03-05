@@ -1,16 +1,22 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
 
-  # GET /items
+  # GET all /items
   def index
     @items = Item.where(user_id: params[:user_id])
-
     render json: @items
   end
 
-  # GET /items/1
+  # GET /items/:id 
   def show
     render json: @item
+  end
+
+
+ # GET /category/:category
+  def category
+    items = Item.where({user_id: params[:user_id] , category: params[:category]})
+    render json: items
   end
 
   # POST /items
