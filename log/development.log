@@ -1507,3 +1507,154 @@ Started GET "/users/1/category/tops" for ::1 at 2021-03-05 16:30:19 -0500
   
 ActionController::RoutingError (No route matches [GET] "/users/1/category/tops"):
   
+Started GET "/users/1/" for ::1 at 2021-03-07 12:21:03 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 123ms (Views: 19.7ms | ActiveRecord: 43.0ms | Allocations: 5379)
+
+
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 12:21:20 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+  [1m[36mItem Load (4.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."category" = $2[0m  [["user_id", 1], ["category", "tops"]]
+  ↳ app/controllers/items_controller.rb:19:in `category'
+Completed 200 OK in 21ms (Views: 12.9ms | ActiveRecord: 12.0ms | Allocations: 946)
+
+
+Started GET "/users/1/items" for ::1 at 2021-03-07 12:21:43 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "item"=>{}}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/items_controller.rb:7:in `index'
+Completed 200 OK in 54ms (Views: 46.0ms | ActiveRecord: 7.4ms | Allocations: 6030)
+
+
+Started GET "/users/1/items/category/tops" for ::1 at 2021-03-07 12:24:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/items/category/tops"):
+  
+Started GET "/users/1/items/category/tops" for ::1 at 2021-03-07 12:24:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/items/category/tops"):
+  
+Started GET "/users/1/items/category/tops" for ::1 at 2021-03-07 12:25:05 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/items/category/tops"):
+  
+Started GET "/users/1/items/category/tops" for ::1 at 2021-03-07 12:26:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/items/category/tops"):
+  
+Started GET "/users/1/items/category/" for ::1 at 2021-03-07 12:27:19 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "id"=>"category", "item"=>{}}
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:54:in `set_item'
+Completed 404 Not Found in 20ms (ActiveRecord: 14.7ms | Allocations: 800)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Item with 'id'=category):
+  
+app/controllers/items_controller.rb:54:in `set_item'
+Started GET "/users/1/items/category/tops" for ::1 at 2021-03-07 12:27:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/items/category/tops"):
+  
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 12:27:59 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 91)
+
+
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 12:28:26 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+Completed 204 No Content in 1ms (ActiveRecord: 3.7ms | Allocations: 105)
+
+
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 12:29:03 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+Completed 204 No Content in 8ms (ActiveRecord: 6.4ms | Allocations: 105)
+
+
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 12:34:31 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 5.4ms | Allocations: 195)
+
+
+Started GET "/users/1/" for ::1 at 2021-03-07 17:41:39 -0500
+Processing by UsersController#show as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+Completed 200 OK in 70ms (Views: 3.0ms | ActiveRecord: 114.5ms | Allocations: 2542)
+
+
+Started GET "/users/1/items" for ::1 at 2021-03-07 17:41:55 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "item"=>{}}
+  [1m[36mItem Load (11.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/items_controller.rb:7:in `index'
+Completed 200 OK in 86ms (Views: 59.0ms | ActiveRecord: 25.0ms | Allocations: 6033)
+
+
+Started GET "/users/1/items/category" for ::1 at 2021-03-07 17:43:43 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "id"=>"category", "item"=>{}}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:54:in `set_item'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.7ms | Allocations: 641)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Item with 'id'=category):
+  
+app/controllers/items_controller.rb:54:in `set_item'
+Started GET "/users/1/items/category/tops" for ::1 at 2021-03-07 17:43:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/items/category/tops"):
+  
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 17:44:16 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 138)
+
+
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 17:44:44 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"artist_name"=>"Regina Spektor", "title"=>"Samson", "artwork"=>"https://upload.wikimedia.org/wikipedia/en/6/69/Dan_Deacon_America.jpg", "user_id"=>"1", "category"=>"tops", "item"=>{}}
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."category" = $2[0m  [["user_id", 1], ["category", "tops"]]
+  ↳ app/controllers/items_controller.rb:19:in `category'
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 20.4ms | Allocations: 903)
+
+
+Started GET "/users/1/category/tops" for ::1 at 2021-03-07 17:46:58 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"user_id"=>"1", "category"=>"tops"}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."category" = $2[0m  [["user_id", 1], ["category", "tops"]]
+  ↳ app/controllers/items_controller.rb:19:in `category'
+Completed 200 OK in 30ms (Views: 5.1ms | ActiveRecord: 5.0ms | Allocations: 2056)
+
+
+Started GET "/users/1/category/top" for ::1 at 2021-03-07 17:47:55 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"user_id"=>"1", "category"=>"top"}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."category" = $2[0m  [["user_id", 1], ["category", "top"]]
+  ↳ app/controllers/items_controller.rb:19:in `category'
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.8ms | Allocations: 742)
+
+
+Started GET "/users/1/category/Top" for ::1 at 2021-03-07 17:48:10 -0500
+Processing by ItemsController#category as */*
+  Parameters: {"user_id"=>"1", "category"=>"Top"}
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."category" = $2[0m  [["user_id", 1], ["category", "Top"]]
+  ↳ app/controllers/items_controller.rb:19:in `category'
+Completed 200 OK in 95ms (Views: 72.5ms | ActiveRecord: 21.2ms | Allocations: 5033)
+
+

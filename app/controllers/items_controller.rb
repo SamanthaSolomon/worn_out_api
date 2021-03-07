@@ -15,9 +15,14 @@ class ItemsController < ApplicationController
 
  # GET /category/:category
   def category
-    items = Item.where({user_id: params[:user_id] , category: params[:category]})
-    render json: items
+    @items = Item.where({user_id: params[:user_id],  category: params[:category]})
+    render json: @items
   end
+
+  #GET /wear_count/:params 
+
+
+
 
   # POST /items
   def create
