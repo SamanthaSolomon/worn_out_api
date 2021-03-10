@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
 
   # PATCH/PUT /items/1
   def update
+    puts params.to_json
     if @item.update(item_params)
       render json: @item
     else
